@@ -8,6 +8,10 @@ const Navbar = () => {
 
   const {logOut, user} = useAuth();
 
+  const handleLogout = async () => {
+    await logOut();
+  }
+
   return (
     <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -63,7 +67,7 @@ const Navbar = () => {
     {
       user && (
         <>
-      <button onClick={() => {logOut()}} className="btn btn-sm mr-4 bg-red-500 text-white">LogOut</button>
+      <button onClick={handleLogout} className="btn btn-sm mr-4 bg-red-500 text-white">LogOut</button>
         <div className="avatar">
         <div className="w-10 rounded-full">
           <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
